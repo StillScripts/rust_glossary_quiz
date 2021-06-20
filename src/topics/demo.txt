@@ -1,0 +1,10 @@
+Atom -$- The fundamental building block of the matter.
+JavaScript -$- The programming language of internet. For Google Chrome, Safari, Firefox, Edge, or any other web browser, JavaScript code provides interactivity to web pages.
+TypeScript -$- An open-sourced language which builds on JavaScript by enabling the usage of type definitions to make it easier to create maintainable, secure, and error-free code.
+Python -$- A general-purpose progamming language that is useful for automation, machine learning, data science, back-end web development and much more.
+React -$- A JavaScript library used to build advanced custom user experiences in websites and mobile apps. React is the Heart of everything I build.
+Next.JS -$- An incredibly diverse, yet simple, web framework built on top of React to build hybrid websites with server-rendered and/or static pages.
+Gatsby.JS -$- A web framework built on React which enables using any CMS for maintaining site content and generates static pages for maximum performance.
+Amazon Web Services -$- The gold-standard of cloud infrastructure. Perfect for hosting websites, managing databases, ensuring security, adding machine learning, and more.
+Microsoft Azure -$- An alternative to AWS that is just and powerful and diverse. Perfect for businesses already using Microsoft's vast suite of software products.
+Google Cloud Platform -$- An emerging infrastructure platform which offers advanced features and integrates perfectly with businesses already using other Google services.
