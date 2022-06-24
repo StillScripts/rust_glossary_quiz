@@ -25,14 +25,14 @@ struct Config {
 impl Config {
     // FUNCTION FOR CREATING NEW CONFIG
     fn new(args: &[String]) -> Result<Config, &str> {
-        // IF USER ENTERS 'cargo run option topic'
+        // IF USER ENTERS 'cargo run [option] [topic]'
         if args.len() == 3 {
             Ok(Config {
                 option: Some(String::from(args[1].clone().trim())),
                 topic: Some(String::from(args[2].clone().trim())),
             })
         }
-        // IF USER ENTERS 'cargo run option' GENERATE TOPIC WITH INPUT
+        // IF USER ENTERS 'cargo run [option]' GENERATE TOPIC WITH INPUT
         else if args.len() == 2 {
             Ok(Config {
                 option: Some(String::from(args[1].clone().trim())),
@@ -65,7 +65,9 @@ fn main() {
     }
 }
 
-// FUNCTION TO RUN ACTION BASED ON CONFIG STATUS
+/**
+ * Run the action based on the option and topic contained in the config.
+ */
 fn run(config: Config) -> Result<(), Box<dyn Error>> {
     println!("Running program");
     if config.option == Some(String::from("practice")) {
@@ -82,7 +84,10 @@ fn run(config: Config) -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
-// FUNCTION TO GENERATE CONFIG WITH USER INPUT
+/**
+ * When the user has not provided parameters for the program, this is used 
+ * to manually create the config by getting an option and topic.
+ */
 fn generate_config() -> Config {
     println!("Select an activity ('add' to add new term, 'practice' to practice, or 'q' to quit).");
     let mut option = String::new();
