@@ -3,7 +3,6 @@ use std::cmp::Ordering;
 use std::env;
 use std::error::Error;
 use std::fs;
-use std::io;
 use std::io::Write;
 use std::path::Path;
 use std::process;
@@ -144,29 +143,6 @@ fn add_new_term(topic: String) {
 
 // #### HANDLING PRACTICE PROCESSES (practice.rs)
 
-// FUNCTION TO TEST INPUT USING A MULTIPLE CHOICE QUESTION
-#[allow(unused)]
-pub fn test_user(question: quiz::MultipleChoice) {
-    // Initialize variables
-    let mut answer = String::new();
-    let correct = question.correct.as_str().to_lowercase();
-    // Print information needed for users to choose an answer
-    println!("{}", question.question);
-    for answer_option in question.options {
-        println!(" {} - {}", answer_option.letter, answer_option.meaning);
-    }
-    // Handle user input and determine if answer is correct or not
-    io::stdin()
-        .read_line(&mut answer)
-        .expect("Error reading input");
-    println!("Your choice was: {}", &answer.trim().to_lowercase());
-    if answer.trim().to_lowercase() == correct {
-        println!("You are correct!");
-    } else {
-        println!("You are wrong!");
-    }
-}
-
 // FUNCTION TO RUN A MULTIPLE CHOICE PRACTICE
 pub fn run_practice(topic: String) {
     // Create the string for the filename path
@@ -231,7 +207,7 @@ pub fn run_practice(topic: String) {
                     .to_vec(),
                 );
                 // Run a single test
-                test_user(multiple_choice_question);
+                quiz::test_user(multiple_choice_question);
                 // Provide option to loop or break.
                 let new_test = handlers::handle_input(String::from("Try another question? (Y/N)"));
                 if new_test.to_lowercase().as_str() == "y" {

@@ -1,5 +1,6 @@
 pub mod quiz {
 	use rand::Rng;
+	use std::io;
 
 	// STRUCT FOR INDIVIDUAL QUESTION OPTION
 	pub struct QuestionOption {
@@ -84,5 +85,28 @@ pub mod quiz {
 			}
 		}
 		random
+	}
+
+	// FUNCTION TO TEST INPUT USING A MULTIPLE CHOICE QUESTION
+	#[allow(unused)]
+	pub fn test_user(question: MultipleChoice) {
+		// Initialize variables
+		let mut answer = String::new();
+		let correct = question.correct.as_str().to_lowercase();
+		// Print information needed for users to choose an answer
+		println!("{}", question.question);
+		for answer_option in question.options {
+			println!(" {} - {}", answer_option.letter, answer_option.meaning);
+		}
+		// Handle user input and determine if answer is correct or not
+		io::stdin()
+			.read_line(&mut answer)
+			.expect("Error reading input");
+		println!("Your choice was: {}", &answer.trim().to_lowercase());
+		if answer.trim().to_lowercase() == correct {
+			println!("You are correct!");
+		} else {
+			println!("You are wrong!");
+		}
 	}
 }
