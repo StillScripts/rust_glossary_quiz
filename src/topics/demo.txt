@@ -8,3 +8,6 @@ Gatsby.JS -$- A web framework built on React which enables using any CMS for mai
 Amazon Web Services -$- The gold-standard of cloud infrastructure. Perfect for hosting websites, managing databases, ensuring security, adding machine learning, and more.
 Microsoft Azure -$- An alternative to AWS that is just and powerful and diverse. Perfect for businesses already using Microsoft's vast suite of software products.
 Google Cloud Platform -$- An emerging infrastructure platform which offers advanced features and integrates perfectly with businesses already using other Google services.
+Solid -$- A JavaScript framework that compiles your code directly to the DOM
+React -$- An amazing library for designing JavaScript UIs that work on websites or mobile apps.
+Qwik -$- A JavaScript framework that serialises components and fetches only when needed.
