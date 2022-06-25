@@ -2,21 +2,29 @@ pub mod quiz {
 	use rand::Rng;
 	use std::io;
 
-	// STRUCT FOR INDIVIDUAL QUESTION OPTION
+	/**
+	 * Struct for a single answer option to a question
+	 */
 	pub struct QuestionOption {
 		pub letter: String,
 		pub meaning: String,
 	}
 
-	// IMPL FOR INITIALISING QUESTION OPTION VARIABLE
+	/**
+	 * Methods for the question option
+	 */
 	impl QuestionOption {
-		// FUNCTION FOR CREATING NEW QUESTION OPTION
+		/**
+		 * Initialise the question option
+		 */
 		fn new(letter: String, meaning: String) -> QuestionOption {
 			QuestionOption { letter, meaning }
 		}
 	}
 
-	// STRUCT FOR A  MULTIPLE-CHOICE QUESTION
+	/**
+	 * Struct for a single multiple-choice question
+	 */
 	pub struct MultipleChoice {
 		pub options: Vec<QuestionOption>,
 		pub question: String,
@@ -25,7 +33,9 @@ pub mod quiz {
 
 	// IMPL FOR INITIALISING QUESTION OPTION VARIABLE
 	impl MultipleChoice {
-		// FUNCTION FOR CREATING NEW QUESTION OPTION
+		/**
+		 * Initialise the multiple-choice question
+		 */
 		fn new(options: Vec<QuestionOption>, question: String, correct: String) -> MultipleChoice {
 			MultipleChoice {
 				options,
@@ -88,7 +98,6 @@ pub mod quiz {
 	}
 
 	// FUNCTION TO TEST INPUT USING A MULTIPLE CHOICE QUESTION
-	#[allow(unused)]
 	pub fn test_user(question: MultipleChoice) {
 		// Initialize variables
 		let mut answer = String::new();

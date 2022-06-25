@@ -15,15 +15,21 @@ pub use crate::files::local;
 pub use crate::input::handlers;
 pub use crate::practice::quiz;
 
-// STRUCT FOR CONFIG VARIABLE
+/**
+ * Struct for the config the user has provided for the app
+ */
 struct Config {
     option: Option<String>,
     topic: Option<String>,
 }
 
-// IMPL FOR INITIALISING CONFIG VARIABLE
+/**
+ * Methods for the app config
+ */
 impl Config {
-    // FUNCTION FOR CREATING NEW CONFIG
+    /**
+     * Initialise the config value based on the user input
+     */
     fn new(args: &[String]) -> Result<Config, &str> {
         // IF USER ENTERS 'cargo run [option] [topic]'
         if args.len() == 3 {
@@ -46,10 +52,11 @@ impl Config {
     }
 }
 
-// MAIN FUNCTION TO RUN PROGRAM
+/**
+ * Method to run the program
+ */
 fn main() {
     println!("Welcome to the Glossary CLI APP!");
-    local::add_to_waitlist(String::from("Daniel"));
 
     // Collect the 'cargo run option topic' arguments
     let args: Vec<String> = env::args().collect();
@@ -123,8 +130,9 @@ fn generate_config() -> Config {
     }
 }
 
-// #### ADDING NEW TERM PROCESSES (add.rs)
-// FUNCTION TO HANDLE ADDING A NEW TERM
+/**
+ * Enable the user to add a new glossary term to a topic
+ */
 fn add_new_term(topic: String) {
     // Generate the name and meaning of the term from user input
     let name = handlers::handle_input(String::from("What is the name of the new glossary term:"));
@@ -146,9 +154,10 @@ fn add_new_term(topic: String) {
         .expect("Write failed");
 }
 
-// #### HANDLING PRACTICE PROCESSES (practice.rs)
-
-// FUNCTION TO RUN A MULTIPLE CHOICE PRACTICE
+/**
+ * Enable the use to answer mutliple-choice questions based on the 
+ * glossary terms for a specific topic.
+ */
 pub fn run_practice(topic: String) {
     // Create the string for the filename path
     let filename_path = format!("src/topics/{}.txt", &topic.trim().to_lowercase());
@@ -186,7 +195,6 @@ pub fn run_practice(topic: String) {
                     }
                 }
                 // Generate the decoy number for the question
-                #[allow(unused)]
                 let first_decoy: u64 = quiz::generate_random_number(
                     topic_lines.len() as u64,
                     [current_number].to_vec(),
@@ -200,7 +208,6 @@ pub fn run_practice(topic: String) {
                     [current_number, first_decoy, second_decoy].to_vec(),
                 );
 
-                #[allow(unused)]
                 // Create the question based on the four random lines chosen
                 let multiple_choice_question = quiz::create_question(
                     [
