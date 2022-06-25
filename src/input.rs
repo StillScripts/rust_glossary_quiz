@@ -1,7 +1,9 @@
 pub mod handlers {
 	use std::io;
 
-	// FUNCTION TO HANDLE USER INPUT and RETURN a STRING
+	/**
+	 * Get user input and return a trimmed string of text
+	 */
 	pub fn handle_input(question: String) -> String {
 		println!("{}", question);
 		let mut input = String::new();
@@ -11,7 +13,9 @@ pub mod handlers {
 		String::from(input.trim())
 	}
 
-	// FUNCTIION TO HANDLE WHEN IMPROPER INPUT IS RECEIVED
+	/**
+	 * Display a message for when improper input has been provided
+	 */
 	pub fn handle_no_input() {
 		println!("You need to enter 'add' or 'practice'. Or enter 'q' to quit program.");
 	}

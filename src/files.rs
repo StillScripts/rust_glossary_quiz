@@ -10,7 +10,6 @@ pub mod local {
 		Ok(())
 	}
 
-	// FUNCTION TO OPEN .txt FILE & RETURN VECTOR of LINES
 	/**
 	 * Open a file that stores the glossary terms for a topic, then
 	 * read and return the content of that file

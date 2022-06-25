@@ -31,7 +31,9 @@ pub mod quiz {
 		pub correct: String,
 	}
 
-	// IMPL FOR INITIALISING QUESTION OPTION VARIABLE
+	/**
+	 * Methods for the multiple-choice question
+	 */
 	impl MultipleChoice {
 		/**
 		 * Initialise the multiple-choice question
@@ -45,7 +47,9 @@ pub mod quiz {
 		}
 	}
 
-	// FUNCTION TO CONVERT VECTOR INTO MULTIPLE CHOICE QUESTION
+	/**
+	 * Use a list of answer options to create a multiple-choice question
+	 */
 	pub fn create_question(answer_options: Vec<&String>) -> MultipleChoice {
 		// Set default variables
 		let mut options: Vec<QuestionOption> = Vec::new();
@@ -78,7 +82,9 @@ pub mod quiz {
 		questions
 	}
 
-	// FUNCTION TO GENERATE RANDOM NUMBER EXCLUDING A VALUE
+	/**
+	 * Generate a random number within a range and exclude a list of values
+	 */
 	pub fn generate_random_number(max: u64, exclude: Vec<u64>) -> u64 {
 		let random: u64;
 		loop {
@@ -97,7 +103,9 @@ pub mod quiz {
 		random
 	}
 
-	// FUNCTION TO TEST INPUT USING A MULTIPLE CHOICE QUESTION
+	/**
+	 * Test a user on a multiple-choice question
+	 */
 	pub fn test_user(question: MultipleChoice) {
 		// Initialize variables
 		let mut answer = String::new();
